@@ -514,5 +514,24 @@ footer {
         });
     });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  document.querySelectorAll("a").forEach(link => {
+
+    link.addEventListener("touchend", function(e) {
+
+      const href = this.getAttribute("href");
+
+      if (href && href !== "#") {
+        window.location.href = href;
+      }
+
+    });
+
+  });
+
+});
+</script>
 </body>
 </html>
