@@ -9,6 +9,54 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     
    <style>
+    /* 1. Force the page to never be wider than the phone screen */
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden !important; 
+    position: relative;
+}
+
+/* 2. Fix the Table responsive behavior */
+.table-responsive {
+    display: block;
+    width: 100% !important;
+    overflow-x: auto !important; /* Forces a horizontal scrollbar inside the box */
+    -webkit-overflow-scrolling: touch;
+    border: 0;
+}
+
+/* 3. Stop text from wrapping in prices so they stay on one line */
+.table td, .table th {
+    white-space: nowrap; 
+    padding: 12px 8px !important;
+    font-size: 0.85rem; /* Smaller font for mobile */
+}
+
+/* 4. Fix Bootstrap's "Grid" system for RTL mobile */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .col-md-6 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Make the header text smaller so it fits on one line */
+    .display-4 {
+        font-size: 1.6rem !important;
+        line-height: 1.3;
+    }
+}
     :root {
         --primary-red: #E03C31;
         --soft-red: #F69789;
@@ -141,8 +189,9 @@
         
         <section id="academic" class="mb-5">
             <h2 class="section-title">الرسوم الدراسية (Tuition Fees)</h2>
-            <div class="table-container table-responsive">
-                <table class="table text-center">
+           <div class="table-container p-0">
+    <div class="table-responsive">
+        <table class="table text-center m-0">
                     <thead>
                         <tr>
                             <th rowspan="2" style="vertical-align: middle; background: #fafafa;">الصف <br> Grade</th>
