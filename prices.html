@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرسوم والأسعار 2026/2027 - أكاديمية الجسور</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-red: #E03C31;
+            --soft-red: #F69789;
+            --main-orange: #F15A29;
+            --bright-yellow: #FBB03B;
+            --deep-orange: #f49404;
+            --dark-text: #2d3436;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #fdfdfd;
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* هيدر عصري بتدرج لوني */
+        .header-bg {
+            background: linear-gradient(135deg, var(--main-orange), var(--primary-red));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 10px 30px rgba(224, 60, 49, 0.2);
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            color: var(--primary-red);
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 60%;
+            height: 5px;
+            background: var(--bright-yellow);
+            border-radius: 10px;
+        }
+
+        /* تنسيق الجداول المودرن */
+        .table-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            margin-bottom: 50px;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table thead th {
+            background-color: #fff;
+            color: var(--primary-red);
+            border: none;
+            padding: 20px;
+            font-weight: 700;
+            border-bottom: 2px solid #f1f1f1;
+        }
+
+        .yellow-header th {
+            background-color: rgba(251, 176, 59, 0.1) !important;
+            color: var(--deep-orange) !important;
+            font-size: 0.9rem;
+        }
+
+        .table tbody tr:hover {
+            background-color: #fff9f8;
+            transition: 0.3s;
+        }
+
+        /* بطاقات المعلومات */
+        .info-card {
+            background: white;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+            border-top: 6px solid var(--bright-yellow);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .border-top-british { border-top-color: var(--main-orange); }
+        .border-top-fees { border-top-color: var(--primary-red); }
+
+        .fee-badge {
+            background: linear-gradient(45deg, #fff5f5, #fff);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px dashed var(--soft-red);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* صندوق التسجيل */
+        .registration-box {
+            background: #fff;
+            border-right: 8px solid var(--deep-orange);
+            color: var(--dark-text);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .check-icon {
+            color: var(--deep-orange);
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        .btn-back {
+            background: white;
+            color: var(--primary-red);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .btn-back:hover {
+            transform: scale(1.05);
+            background: var(--bright-yellow);
+            color: white;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #2d3436;
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .header-bg { padding: 50px 0; border-radius: 0 0 30px 30px; }
+            .display-4 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-bg">
+        <div class="container">
+            <h1 class="display-4 font-weight-bold">الرسوم الدراسية والمواصلات</h1>
+            <p class="lead opacity-80">School Fees & Transportation 2026 / 2027</p>
+            <div class="mt-4">
+                <a href="index.html" class="btn-back">← العودة للرئيسية | Back to Home</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section id="academic" class="mb-5">
+            <h2 class="section-title">الرسوم الدراسية (Tuition Fees)</h2>
+            <div class="table-container table-responsive">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th rowspan="2" style="vertical-align: middle; background: #fafafa;">الصف <br> Grade</th>
+                            <th colspan="2" style="color: var(--main-orange);">البرنامج البريطاني (I.G.C.S.E)</th>
+                            <th colspan="2" style="color: var(--primary-red);">البرنامج الأمريكي (A.H.S.D)</th>
+                        </tr>
+                        <tr class="yellow-header">
+                            <th>القسط (Tuition)</th>
+                            <th>التسجيل (Reg.)</th>
+                            <th>القسط (Tuition)</th>
+                            <th>التسجيل (Reg.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>KG1</td><td>1200</td><td>100</td><td>-</td><td>-</td></tr>
+                        <tr><td style="font-weight:bold">KG2</td><td>1200</td><td>180 + 50*</td><td>-</td><td>-</td></tr>
+                        <tr><td>الأول (1st)</td><td>1695</td><td>250</td><td>-</td><td>-</td></tr>
+                        <tr><td>الثاني (2nd)</td><td>1745</td><td>250</td><td>-</td><td>-</td></tr>
+                        <tr><td>الثالث (3rd)</td><td>1810</td><td>250</td><td>-</td><td>-</td></tr>
+                        <tr><td>الرابع (4th)</td><td>1860</td><td>250</td><td>-</td><td>-</td></tr>
+                        <tr><td>الخامس (5th)</td><td>1920</td><td>250</td><td>-</td><td>-</td></tr>
+                        <tr><td>السادس (6th)</td><td>1970</td><td>250</td><td>-</td><td>-</td></tr>
+                        <tr><td>السابع (7th)</td><td>2030</td><td>250</td><td>-</td><td>-</td></tr>
+                        <tr><td>الثامن (8th)</td><td>2080</td><td>250</td><td>-</td><td>-</td></tr>
+                        <tr style="background: rgba(241, 90, 41, 0.03);"><td>التاسع (9th)</td><td>2410</td><td>400</td><td>2665</td><td>650</td></tr>
+                        <tr style="background: rgba(241, 90, 41, 0.03);"><td>العاشر (10th)</td><td>2675</td><td>400</td><td>2830</td><td>650</td></tr>
+                        <tr><td>الحادي عشر (11th)</td><td>2940</td><td>350</td><td>3100</td><td>400</td></tr>
+                        <tr><td>الثاني عشر (12th)</td><td>3085</td><td>200</td><td>-</td><td>-</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="registration-box mb-5">
+                <h4 style="color: var(--main-orange);" class="mb-4 font-weight-bold">تشمل رسوم التسجيل ما يلي:</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><span class="check-icon">✓</span> الكتب المدرسية المقررة</li>
+                            <li class="mb-2"><span class="check-icon">✓</span> كتيبات المفردات (English)</li>
+                            <li class="mb-2"><span class="check-icon">✓</span> كتيبات الكتابة (English)</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><span class="check-icon">✓</span> كافة المطبوعات الورقية</li>
+                            <li class="mb-2"><span class="check-icon">✓</span> الزي المدرسي (55 دينار)</li>
+                            <li class="mb-2"><span class="check-icon">✓</span> المواصلات (تحدد حسب المنطقة)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-3 p-2" style="background: #fff9f0; border-radius: 10px;">
+                   <p class="small mb-0 text-muted">* ملاحظة: 50 دينار رسوم تخرج لطلاب KG2 فقط.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="kindergarten" class="mb-5">
+            <h2 class="section-title">قسم الروضة (Kindergarten)</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card info-card p-4 border-top-british h-100">
+                        <h3 style="color: var(--main-orange);" class="h4 mb-3 font-weight-bold">British International System</h3>
+                        <p>تتبع الروضة للنظام الدولي البريطاني المعتمد من جامعة <b>Cambridge</b>. المواد الأساسية:</p>
+                        <ul class="pr-3" style="color: #555;">
+                            <li>English Language Arts</li>
+                            <li>Mathematics & Science</li>
+                            <li>Life Skills & Global Perspective</li>
+                        </ul>
+                        <p class="small font-italic text-muted mt-auto">لغة التواصل الأساسية مع الطلاب هي الإنجليزية.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card info-card p-4 border-top-fees text-center h-100">
+                        <h3 style="color: var(--primary-red);" class="h4 mb-3 font-weight-bold">تكاليف الروضة</h3>
+                        <div class="fee-badge">
+                            <span class="h2 font-weight-bold" style="color: var(--primary-red);">1200 JOD</span>
+                            <p class="mb-0 text-muted">القسط السنوي</p>
+                        </div>
+                       <div class="text-right mt-4">
+    <div class="d-flex align-items-center mb-3 p-2" style="background: rgba(241, 90, 41, 0.05); border-radius: 12px; border-right: 4px solid var(--main-orange);">
+        <div class="ml-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: white; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+            <span style="font-size: 1.2rem;">📝</span>
+        </div>
+        <div>
+            <h6 class="mb-0 font-weight-bold" style="color: var(--dark-text);">رسوم التسجيل</h6>
+            <p class="mb-0 text-muted small">100 لـ KG1 <span class="mx-1">|</span> 180 لـ KG2</p>
+        </div>
+    </div>
+
+    <div class="d-flex align-items-center mb-3 p-2" style="background: rgba(251, 176, 59, 0.05); border-radius: 12px; border-right: 4px solid var(--bright-yellow);">
+        <div class="ml-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: white; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+            <span style="font-size: 1.2rem;">📚</span>
+        </div>
+        <div>
+            <h6 class="mb-0 font-weight-bold" style="color: var(--dark-text);">الخدمات المشمولة</h6>
+            <p class="mb-0 text-muted small">شامل الكتب المدرسية والأنشطة اللامنهجية</p>
+        </div>
+    </div>
+
+    <div class="d-flex align-items-center p-2" style="background: rgba(224, 60, 49, 0.05); border-radius: 12px; border-right: 4px solid var(--primary-red);">
+        <div class="ml-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: white; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+            <span style="font-size: 1.2rem;">🎓</span>
+        </div>
+        <div>
+            <h6 class="mb-0 font-weight-bold" style="color: var(--dark-text);">حفل التخرج</h6>
+            <p class="mb-0 text-muted small">50 دينار (لطلاب KG2 فقط)</p>
+        </div>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="transport" class="mb-5">
+            <h2 class="section-title">رسوم المواصلات (Transportation)</h2>
+            <div class="table-container table-responsive">
+                <table class="table table-hover text-center">
+                    <thead>
+                        <tr style="background: #fafafa;">
+                            <th>الفئة</th>
+                            <th>المنطقة / الأحياء</th>
+                            <th style="color: var(--main-orange);">اتجاهين</th>
+                            <th style="color: var(--deep-orange);">اتجاه واحد</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td class="text-right">الصريح، مخيم الحصن، الترخيص، حوارة</td><td>320 JOD</td><td>270 JOD</td></tr>
+                        <tr><td>2</td><td class="text-right">مسجد طفار، حدائق الملك عبدالله، المستشفى العسكري</td><td>370 JOD</td><td>320 JOD</td></tr>
+                        <tr><td>3</td><td class="text-right">الراهبات، دوار اللوازم، مسجد أبو دلو، إيدون</td><td>410 JOD</td><td>360 JOD</td></tr>
+                        <tr><td>4</td><td class="text-right">أرابيلا مول، سيفوي، مجمع الشيخ خليل، شارع فلسطين</td><td>410 JOD</td><td>360 JOD</td></tr>
+                        <tr><td>5</td><td class="text-right">زبدة، ضاحية الحسين، مستشفى رحمة، إشارة النسيم</td><td>410 JOD</td><td>360 JOD</td></tr>
+                        <tr><td>6</td><td class="text-right">مجمع عمان، دوار الثقافة، حماية الأسرة، قرية SOS</td><td>395 JOD</td><td>345 JOD</td></tr>
+                        <tr><td>7</td><td class="text-right">ميدان الشهداء، دوار الدرة، دوار سال، شارع الـ 30</td><td>410 JOD</td><td>360 JOD</td></tr>
+                        <tr><td>8</td><td class="text-right">المدينة الصناعية، البياضة، حنينا، شارع القدس</td><td>410 JOD</td><td>360 JOD</td></tr>
+                        <tr><td>9</td><td class="text-right">الرمثا: حي الزهور، الجمال، دوار الـ 500، البلدية</td><td>395 JOD</td><td>345 JOD</td></tr>
+                        <tr><td>10</td><td class="text-right">الرمثا: الحي الغربي، مستشفى الرمثا الحكومي</td><td>410 JOD</td><td>370 JOD</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="text-white text-center py-5 mt-5">
+        <div class="container">
+            <p class="mb-2 font-weight-bold">أكاديمية الجسور الدولية</p>
+            <p class="mb-0 opacity-50" style="font-size: 0.9rem;">© 2026/2027 جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+</body>
+</html>

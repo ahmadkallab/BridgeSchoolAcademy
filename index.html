@@ -59,31 +59,32 @@
           </a>
           <div class="mx-auto text-center">
             <nav class="site-navigation position-relative text-right" role="navigation">
-              <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block m-0 p-0">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#courses" class="nav-link">Events</a></li>
-                <li><a href="#programs" class="nav-link">Programs</a></li>
-                <li><a href="#download-section" class="nav-link">Admission</a></li>
-                <li><a href="#about" class="nav-link">About Us</a></li>
-
-                <li><a href="#faq" class="nav-link">FAQ</a></li>
-                
-              </ul>
-            </nav>
-          </div>
+             <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block m-0 p-0">
+  <li><a href="#home" class="nav-link">Home</a></li>
+  <li><a href="#courses" class="nav-link">Events</a></li>
+  <li><a href="#programs" class="nav-link">Programs</a></li>
+  <li><a href="#download-section" class="nav-link">Admission</a></li>
+  <li><a href="prices.html" class="nav-link">Prices</a></li> <li><a href="#about" class="nav-link">About Us</a></li>
+  <li><a href="#faq" class="nav-link">FAQ</a></li>
   
-          <div class="ml-auto">
-            <nav class="site-navigation position-relative text-right" role="navigation">
-              <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
-                <li class="cta">
-                  <a href="#contact-section" class="nav-link no-underline"><span>Contact Us</span></a>
-                </li>
-              </ul>
+</ul>
             </nav>
-            <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a>
           </div>
-        </div>
-      </div>
+  <div class="ml-auto">
+  <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
+      <li class="cta">
+        <a href="#contact-section" class="nav-link"><span>Contact Us</span></a>
+      </li>
+      <li class="ml-2">
+        <a href="javascript:void(0)" onclick="toggleLanguage()" class="nav-link" style="color: #FBB03B; font-weight: bold; border: 1px solid #FBB03B; border-radius: 30px; padding: 5px 15px !important;">
+          <span id="custom-lang-text">العربية</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a>
+</div>
     </header>
     
 
@@ -1142,7 +1143,57 @@
   <script src="js/jquery.fancybox.min.js"></script>
   <script src="js/jquery.sticky.js"></script>
 
-  
+  <!-- Hidden Google Translate Element -->
+<div id="google_translate_element" style="display:none;"></div>
+<div id="google_translate_element" style="display:none;"></div>
+
+<script>
+  // This function only runs 3 seconds AFTER the page is fully loaded
+  function lazyLoadGoogleTranslate() {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    document.body.appendChild(script);
+  }
+
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,ar',
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+
+  // Speed Hack: Wait for the window to load, then wait 3 more seconds
+  window.addEventListener('load', function() {
+    setTimeout(lazyLoadGoogleTranslate, 3000); 
+  });
+
+  function toggleLanguage() {
+    var googleSelect = document.querySelector('#google_translate_element select');
+    var langText = document.getElementById('custom-lang-text');
+
+    if (!googleSelect) {
+      // If the user clicks too fast, we force load it immediately
+      alert("Translating engine is warming up... try again in 2 seconds.");
+      return;
+    }
+
+    if (langText.innerText === "العربية") {
+      googleSelect.value = 'ar';
+      langText.innerText = "English";
+    } else {
+      googleSelect.value = 'en';
+      langText.innerText = "العربية";
+    }
+    googleSelect.dispatchEvent(new Event('change'));
+  }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<div id="google_translate_element" style="display:none;"></div>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script src="js/main.js"></script>
     
   </body>
