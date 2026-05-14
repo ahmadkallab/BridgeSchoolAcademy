@@ -9,168 +9,326 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     
    <style>
-    /* 1. Force the page to never be wider than the phone screen */
-html, body {
+:root {
+    --primary-red: #E03C31;
+    --soft-red: #F69789;
+    --main-orange: #F15A29;
+    --bright-yellow: #FBB03B;
+    --deep-orange: #f49404;
+    --dark-text: #2d3436;
+    --light-bg: #f8f9fb;
+}
+
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
     width: 100%;
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
-    overflow-x: hidden !important; 
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: var(--light-bg);
+    color: var(--dark-text);
+    line-height: 1.7;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header-bg {
+    background: linear-gradient(135deg, var(--main-orange), var(--primary-red));
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 10px 35px rgba(224, 60, 49, 0.2);
+    margin-bottom: 50px;
+}
+
+.display-4 {
+    font-weight: 800;
+    font-size: 3rem;
+}
+
+.lead {
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-back {
+    display: inline-block;
+    background: white;
+    color: var(--primary-red);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.btn-back:hover {
+    transform: translateY(-2px);
+    background: #fff5f5;
+    color: var(--primary-red);
+}
+
+/* =========================
+   SECTION TITLES
+========================= */
+
+.section-title {
+    color: var(--primary-red);
+    font-weight: 800;
     position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+    font-size: 2rem;
 }
 
-/* 2. Fix the Table responsive behavior */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 0;
+    width: 60px;
+    height: 5px;
+    border-radius: 20px;
+    background: var(--bright-yellow);
+}
+
+/* =========================
+   TABLES
+========================= */
+
+.table-container {
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+    margin-bottom: 30px;
+}
+
 .table-responsive {
-    display: block;
-    width: 100% !important;
-    overflow-x: auto !important; /* Forces a horizontal scrollbar inside the box */
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    border: 0;
 }
 
-/* 3. Stop text from wrapping in prices so they stay on one line */
-.table td, .table th {
-    white-space: nowrap; 
-    padding: 12px 8px !important;
-    font-size: 0.85rem; /* Smaller font for mobile */
+.table {
+    margin: 0;
+    min-width: 750px;
 }
 
-/* 4. Fix Bootstrap's "Grid" system for RTL mobile */
-@media (max-width: 768px) {
-    .container {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-    }
-    
-    .row {
-        margin-left: 0;
-        margin-right: 0;
-    }
+.table thead th {
+    background: #fafafa;
+    color: var(--primary-red);
+    font-weight: 700;
+    padding: 18px 10px;
+    border-bottom: 2px solid #eee;
+    white-space: nowrap;
+}
 
-    .col-md-6 {
-        padding-left: 0;
-        padding-right: 0;
-    }
+.table td {
+    padding: 14px 10px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
 
-    /* Make the header text smaller so it fits on one line */
+.table tbody tr:hover {
+    background: rgba(241, 90, 41, 0.03);
+}
+
+/* =========================
+   INFO CARDS
+========================= */
+
+.info-card {
+    background: white;
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border-top: 6px solid var(--bright-yellow);
+    height: 100%;
+    transition: 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.border-top-british {
+    border-top-color: var(--main-orange);
+}
+
+.border-top-fees {
+    border-top-color: var(--primary-red);
+}
+
+/* =========================
+   REGISTRATION BOX
+========================= */
+
+.registration-box {
+    background: white;
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border-right: 6px solid var(--main-orange);
+}
+
+.check-icon {
+    color: var(--main-orange);
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+/* =========================
+   FEE BADGE
+========================= */
+
+.fee-badge {
+    background: linear-gradient(45deg, #fff5f5, #fff);
+    border: 1px dashed var(--soft-red);
+    border-radius: 18px;
+    padding: 20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: linear-gradient(135deg, var(--main-orange), var(--primary-red));
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px) {
+
     .display-4 {
-        font-size: 1.6rem !important;
-        line-height: 1.3;
-    }
-}
-    :root {
-        --primary-red: #E03C31;
-        --soft-red: #F69789;
-        --main-orange: #F15A29;
-        --bright-yellow: #FBB03B;
-        --deep-orange: #f49404;
-        --dark-text: #2d3436;
-    }
-
-    body {
-        font-family: 'Cairo', sans-serif;
-        background-color: #fdfdfd;
-        color: var(--dark-text);
-        line-height: 1.6;
-        overflow-x: hidden; /* Prevents side-scrolling on mobile */
-    }
-
-    /* Modern Header */
-    .header-bg {
-        background: linear-gradient(135deg, var(--main-orange), var(--primary-red));
-        color: white;
-        padding: 60px 15px;
-        text-align: center;
-        border-bottom-left-radius: 40px;
-        border-bottom-right-radius: 40px;
-        box-shadow: 0 10px 30px rgba(224, 60, 49, 0.2);
-        margin-bottom: 40px;
+        font-size: 2.3rem;
     }
 
     .section-title {
-        color: var(--primary-red);
-        font-weight: 800;
-        position: relative;
-        display: inline-block;
-        margin-bottom: 30px;
         font-size: 1.8rem;
     }
 
-    .section-title::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        right: 0;
-        width: 50px;
-        height: 4px;
-        background: var(--bright-yellow);
-        border-radius: 10px;
+    .header-bg {
+        padding: 60px 20px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .container {
+        padding-right: 15px;
+        padding-left: 15px;
     }
 
-    /* Table Container with scroll indicator for mobile */
-    .table-container {
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-        margin-bottom: 30px;
-        overflow: hidden;
-        border: 1px solid #eee;
+    .header-bg {
+        padding: 45px 15px;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
     }
 
-    .table thead th {
-        background-color: #fafafa;
-        color: var(--primary-red);
-        padding: 15px;
-        font-size: 0.95rem;
-        border-bottom: 2px solid #f1f1f1;
+    .display-4 {
+        font-size: 1.8rem;
+        line-height: 1.4;
     }
 
-    /* Info Cards */
+    .lead {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+
+    .table {
+        min-width: 650px;
+    }
+
+    .table td,
+    .table th {
+        font-size: 0.85rem;
+        padding: 10px 8px;
+    }
+
+    .info-card,
+    .registration-box {
+        padding: 20px;
+    }
+
+    .btn-back {
+        width: 100%;
+        text-align: center;
+    }
+
+    .d-flex {
+        flex-wrap: nowrap;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .display-4 {
+        font-size: 1.5rem;
+    }
+
+    .lead {
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .table {
+        min-width: 600px;
+    }
+
     .info-card {
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.03);
-        margin-bottom: 20px;
-        border-top: 6px solid var(--bright-yellow);
-        padding: 25px;
+        padding: 18px;
     }
-
-    .fee-badge {
-        background: linear-gradient(45deg, #fff5f5, #fff);
-        padding: 15px;
-        border-radius: 15px;
-        border: 1px dashed var(--soft-red);
-        margin: 15px 0;
-    }
-
-    /* Mobile-Specific Fixes */
-    @media (max-width: 768px) {
-        .header-bg { padding: 40px 10px; border-radius: 0 0 25px 25px; }
-        .display-4 { font-size: 1.8rem !important; }
-        .lead { font-size: 1rem; }
-        
-        /* Make tables scrollable but show a hint */
-        .table-responsive {
-            display: block;
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        
-        .table { min-width: 600px; } /* Ensures table content doesn't squash */
-
-        .registration-box {
-            padding: 20px;
-            border-right-width: 5px;
-        }
-        
-        .btn-back {
-            display: block;
-            width: 100%;
-            margin-bottom: 10px;
-        }
-
-        .section-title { font-size: 1.5rem; }
-    }
+}
 </style>
 </head>
 <body>
