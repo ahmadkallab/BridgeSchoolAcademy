@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Redirect index.html to the main domain
+RewriteRule ^index\.html$ / [R=301,L]
+
+# Allow access to pages without typing .html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
